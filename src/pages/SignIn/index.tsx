@@ -13,10 +13,10 @@ import Icon from 'react-native-vector-icons/Feather';
 
 import { useNavigation } from '@react-navigation/native';
 
+import * as Yup from 'yup';
+
 import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
-
-import * as Yup from 'yup';
 
 import getValidationErrors from '../../utils/getValidationErrors';
 
@@ -42,6 +42,7 @@ interface SignInFormData {
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
+
   const navigation = useNavigation();
 
   const handleSignIn = useCallback(async (data: SignInFormData) => {
